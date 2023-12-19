@@ -1,8 +1,15 @@
+
+import Head from "next/head";
+import Link from "next/link";
+
 export default function firstPost() {
     return (
         <div>
-            <h1>最初の段階</h1>
-            <h2>ホームへ戻る</h2>
+            <Head>
+                <title>最初の投稿</title>
+            </Head>
+            <h1>最初の投稿</h1>
+            <Link href="/">ホームへ戻る</Link>
         </div>
     );
 }
