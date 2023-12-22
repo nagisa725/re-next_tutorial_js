@@ -17,24 +17,63 @@ export default function Home() {
         </p>
       </section>
 
-      <section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2>📝【絶対】サイト拡散希望❗広告収入❗❗❗【拡散】</h2>
-        <div>
+        <div className={styles.grid}>
           <article>
             <Link href="">
-              <img src='/sample/ちいかわ　img.jpeg'/>
+              <img src='/sample/ちいかわ　img.jpeg'
+              className={styles.thumbnailImage}/>
             </Link>
-            <Link href="">
+            <Link href="" className={utilStyles.boldText}>
               ちいかわを知らない無知な貴方はこちらへ
             </Link>
             <br />
-            <small>
+            <small className={utilStyles.lightText}>
+              February 23, 2024
+            </small>
+          </article>
+          <article>
+            <Link href="">
+              <img src='/sample/ちいかわ　img.jpeg'
+              className={styles.thumbnailImage}/>
+            </Link>
+            <Link href="" className={utilStyles.boldText}>
+              ちいかわを知らない無知な貴方はこちらへ
+            </Link>
+            <br />
+            <small className={utilStyles.lightText}>
+              February 23, 2024
+            </small>
+          </article>
+          <article>
+            <Link href="">
+              <img src='/sample/ちいかわ　img.jpeg'
+              className={styles.thumbnailImage}/>
+            </Link>
+            <Link href="" className={utilStyles.boldText}>
+              ちいかわを知らない無知な貴方はこちらへ
+            </Link>
+            <br />
+            <small className={utilStyles.lightText}>
+              February 23, 2024
+            </small>
+          </article>
+          <article>
+            <Link href="">
+              <img src='/sample/ちいかわ　img.jpeg'
+              className={styles.thumbnailImage}/>
+            </Link>
+            <Link href="" className={utilStyles.boldText}>
+              ちいかわを知らない無知な貴方はこちらへ
+            </Link>
+            <br />
+            <small className={utilStyles.lightText}>
               February 23, 2024
             </small>
           </article>
         </div>
       </section>
     </Layout>
-  
   );
 }
