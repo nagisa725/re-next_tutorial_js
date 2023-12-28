@@ -34,22 +34,23 @@ export default function Home({allPostsData}) {
         <h2>📝【絶対】サイト拡散希望❗広告収入❗❗❗【拡散】</h2>
         <div className={styles.grid}>
           {allPostsData.map(({id,title,date,thumbnail}) =>(
-          <article>
-          <Link href="">
-            <img src='/sample/ちいかわ　img.jpeg'
-            className={styles.thumbnailImage}/>
-          </Link>
-          <Link href="" className={utilStyles.boldText}>
-            ちいかわを知らない無知な貴方はこちらへ
-          </Link>
-          <br />
-          <small className={utilStyles.lightText}>
-            February 23, 2024
-          </small>
-        </article>
-        ))}
+          <article key={id}>
+              <Link href={`/posts/${id}`}> 
+               {/* 記事をクリックすると`/posts/${id}`のページに遷移する  */}
+               <img src={`${thumbnail}`}className={styles.thumbnailImage}/>
+               {/* mdファイルのメタデータthumbnail部分の相対パスが入っている */}
+              </Link>
+              <Link href={`/posts/${id}`} 
+                className={utilStyles.boldText}>{title}
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>{date}</small>
+          </article>
+          ))}
         </div>
       </section>
     </Layout>
   );
 }
+          
+            
