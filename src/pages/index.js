@@ -22,6 +22,7 @@ export async function getStaticProps(){
 }
 
 export default function Home({allPostsData}) {
+  //渡されたHome({allPostsData}) でプリレンダリングされた時一度だけHTMLに全てが渡される仕組み
   return (
     <Layout>
       <section className={utilStyles.headingMd}>
