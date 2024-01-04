@@ -1,5 +1,5 @@
 import Layout from "../../../conponents/Layout";
-import { getAllPostIds } from "../../../lib/post";
+import { getAllPostIds, getPostData } from "../../../lib/post";
 
 /*getStaticPathsのために使うオブジェクトのパスをpost.jsにてparams,idで取得したので
 作ったパスをここでは取り込んでいく↓*/
@@ -13,11 +13,31 @@ export async function getStaticPaths(){
         /*fallback: false,とすることで取ってきているpaths(getAllPostIds())に
         含まれていない他のパスにアクセスをすると404エラーページに遷移する
         ↑ =このパスで設定されたページはSSGされるということ！ */
-    }
-}
+    };
+};
 
-export default function Post() {
+//ブログページのURLに表示されるmdファイルの名前を元に各ブログ記事リンク先に応じた内容を表示させる作業　
+//*これはあくまでURLに含まれたファイル名を取ってくるための式なのでブログのデータ情報全てを引っ張ってくる関数は別にある
+export async function getStaticProps({params}){
+    const postData = await getPostData(params.id);
+    //{params}を引数に取る事でparams.id = URLに含まれたファイル名を取得することが出来る=個別のデータを識別し各ブログデータをpostDataに格納できる
+
+    return {
+        props:{
+            //getStaticPropsにはprops:で返す
+            postData,
+        }
+    };
+};
+
+export default function Post(postData) {
     return (
-       <Layout>動的ルーティング設定</Layout>
+       <Layout>
+        {postData.title}
+        <br />
+        {postData.date}
+        <br />
+        {postData.blogContentHTML}
+       </Layout>
     );
 }
