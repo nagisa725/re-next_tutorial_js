@@ -30,14 +30,17 @@ export async function getStaticProps({params}){
     };
 };
 
-export default function Post(postData) {
+export default function Post({postData}) {
+    //console.log(postData.title)
     return (
        <Layout>
+        <article>
         {postData.title}
         <br />
         {postData.date}
         <br />
         {postData.blogContentHTML}
+        </article>
        </Layout>
     );
 }
