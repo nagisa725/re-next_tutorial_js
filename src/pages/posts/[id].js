@@ -1,5 +1,6 @@
 import Layout from "../../../conponents/Layout";
 import { getAllPostIds, getPostData } from "../../../lib/post";
+import utilStyles from "@/styles/utils.module.css";
 
 /*getStaticPathsのために使うオブジェクトのパスをpost.jsにてparams,idで取得したので
 作ったパスをここでは取り込んでいく↓*/
@@ -35,11 +36,9 @@ export default function Post({postData}) {
     return (
        <Layout>
         <article>
-        {postData.title}
-        <br />
-        {postData.date}
-        <br />
-        {postData.blogContentHTML}
+        <h1 className={utilStyles.headingX1}>{postData.title}</h1>
+        <div className={utilStyles.lightText}>{postData.date}</div>
+        <div dangerouslySetInnerHTML={{__html: postData.blogContentHTML}}/>
         </article>
        </Layout>
     );
