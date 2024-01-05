@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "@/styles/utils.module.css";
+import Link from "next/link";
 
 const name ="ちいかわ 友の会"
 export const siteTitle = "Next.js ちいかわ友の会"
@@ -32,6 +33,14 @@ function Layout({children,home}) {
                 )}
             </header>
             <main>{children}</main>
+            {!home &&(
+                <div>
+                    <Link href="/">←ホームへ戻る</Link>
+                    {/* ↑もしホームでなければこれが表示され押すとindexページに戻る */}
+                </div>
+
+            )}
+            {/* !home && で'もしhomeでなければ〜、という意味になる' */}
         </div>
     );
 }

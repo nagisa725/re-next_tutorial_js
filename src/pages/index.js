@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
-import Layout from '../../conponents/Layout'
+import Layout, { siteTitle } from '../../conponents/Layout'
 
 import utilStyles from "@/styles/utils.module.css";
 import Link from 'next/link'
@@ -25,6 +25,9 @@ export default function Home({allPostsData}) {
   //渡されたHome({allPostsData}) でプリレンダリングされた時一度だけHTMLに全てが渡される仕組み
   return (
     <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
       <section className={utilStyles.headingMd}>
         <p>
           この場所はちいかわ好きによるちいかわ好きのためのちいかわ好きが集うサイトです。/好きな言葉はちいかわ。
