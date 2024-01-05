@@ -7,7 +7,6 @@ export const siteTitle = "Next.js ちいかわ友の会"
 
 // 自動補完機能 nfe タブ
 function Layout({children}) {
-    console.log(children)
     return (
         <div className={styles.container}>
             <Head>
