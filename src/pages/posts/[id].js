@@ -43,6 +43,7 @@ export default function Post({postData}) {
         <h1 className={utilStyles.headingX1}>{postData.title}</h1>
         <div className={utilStyles.lightText}>{postData.date}</div>
         <div dangerouslySetInnerHTML={{__html: postData.blogContentHTML}}/>
+        
         </article>
        </Layout>
     );
